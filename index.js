@@ -1498,3 +1498,64 @@
 //   .filter((item) => item.status === "completed")
 //   .flatMap(({ products }) => products);
 // console.log(prod);
+
+//Напиши клас Client який створює об'єкт
+//з ​​властивостями login, email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+
+// class Client {
+//   #login;
+//   #email;
+
+//   constructor({ login, email }) {
+//     this.#email = email;
+//     this.#login = login;
+//   }
+//   get email() {
+//     return this.#email;
+//   }
+//   get login() {
+//     return this.#login;
+//   }
+
+//   set login(newLogin) {
+//     return (this.#login = newLogin);
+//   }
+
+//   set email(newEmail) {
+//     return (this.#email = newEmail);
+//   }
+// }
+
+// const client = new Client({ email: "r@if.ua", login: "Ivan" });
+// console.log(client.login);
+// client.login = "Maria";
+// console.log(client.login);
+
+// Створи клас Phone який створює об'єкт з ​​властивістю price.
+// Додай статичну властивість MAX_PRICE зі значенням 40000 - максимально допустима ціна телефону.
+// Оголоси приватну властивість price доступ до якої буде через геттер та сеттер.
+// Додай сетеру price перевірку значення параметра newPrice, що передається.Якщо воно більше за MAX_PRICE,
+// сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну телефону.
+
+// class Phone {
+//   #price;
+//   static MAX_PRICE = 40000;
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Phone.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+// }
+// const phone = new Phone({ price: 30000 });
+// phone.price = 35000;
+// console.log(phone.price);
